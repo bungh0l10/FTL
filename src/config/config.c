@@ -795,15 +795,10 @@ void initConfig(struct config *conf)
 	conf->database.DBimport.t = CONF_BOOL;
 	conf->database.DBimport.d.b = true;
 
-	conf->database.DBexport.k = "database.DBexport";
-	conf->database.DBexport.h =  "Should FTL store queries in the long-term database?";
-	conf->database.DBexport.t = CONF_BOOL;
-	conf->database.DBexport.d.b = true;
-
 	conf->database.maxDBdays.k = "database.maxDBdays";
-	conf->database.maxDBdays.h = "How long should queries be stored in the database [days]?";
-	conf->database.maxDBdays.t = CONF_INT;
-	conf->database.maxDBdays.d.i = (365/4);
+	conf->database.maxDBdays.h = "How long should queries be stored in the database [days]?\n Setting this to 0 disables exporting queries to the database.";
+	conf->database.maxDBdays.t = CONF_UINT;
+	conf->database.maxDBdays.d.ui = (365u/4);
 
 	conf->database.DBinterval.k = "database.DBinterval";
 	conf->database.DBinterval.h = "How often do we store queries in FTL's database [seconds]?";

@@ -204,7 +204,6 @@ struct config {
 
 	struct {
 		struct conf_item DBimport;
-		struct conf_item DBexport;
 		struct conf_item maxDBdays;
 		struct conf_item DBinterval;
 		struct {
